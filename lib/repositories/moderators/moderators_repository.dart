@@ -9,7 +9,7 @@ class ModeratorsRepository extends AbstractModeratorRepository {
 
   @override
   Future<List<dynamic>> getModeratorsList() async {
-    final response = await Dio().get('https://api.vimeworld.com/online/staff');
+    final response = await dio.get('https://api.vimeworld.com/online/staff');
 
     List<dynamic> moderators =
         response.data.map((e) => Moderator.fromJson(e)).toList();
